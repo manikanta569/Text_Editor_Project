@@ -1,0 +1,12 @@
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE letters (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255),
+  title VARCHAR(255),
+  content TEXT,
+  FOREIGN KEY (email) REFERENCES users(email)
+);
